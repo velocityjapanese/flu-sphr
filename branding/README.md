@@ -1,21 +1,19 @@
 # FluteSpheric channel branding
 
-Channel: **FluteSpheric** — `@flutespheric` (handle checked free on YouTube)
-Channel ID and OAuth token: **pending** until the channel is created.
+Channel: **FluteSpheric** — `@flutespheric` — `UCN8nfTQ_l-NSpUvDpiAgIiQ`
 
 | Asset | File | Status |
 | --- | --- | --- |
-| Banner | `channel_banner_2048x1152.jpg` | ready to upload |
-| Description | `channel_description.txt` | ready to set |
-| Keywords | `channel_keywords.txt` | ready to set |
+| Banner | `channel_banner_2048x1152.jpg` | set through the API |
+| Description | `channel_description.txt` | set through the API |
+| Keywords | `channel_keywords.txt` | set through the API |
 | Avatar | `channel_avatar_800.png` | **manual upload only** |
 | Video watermark | not used | the sheet-music panel owns the upper-right corner |
 
-## Create the channel and token
+## Channel and token
 
-1. Create the FluteSpheric channel in YouTube Studio with the free
-   `@flutespheric` handle.
-2. Mint a refresh token for that channel with the existing OAuth client:
+The channel and its channel-specific refresh token are created. To re-mint
+the token later, use the shared OAuth client:
 
 ```powershell
 python scripts/get_refresh_token.py `
@@ -25,8 +23,8 @@ python scripts/get_refresh_token.py `
 ```
 
 The client JSON only supplies the shared `client_id`/`client_secret`; the
-script opens Google's consent screen so you can pick the new FluteSpheric
-channel and writes a channel-specific refresh token.
+script opens Google's consent screen so you can pick the FluteSpheric channel
+and writes a channel-specific refresh token.
 
 ## What the YouTube Data API can set
 
